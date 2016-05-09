@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <style>
+    body {
+      font: 14px/1.5 sans-serif;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    article {
+      border: 1px solid rgb(153, 153, 153);
+      box-shadow: 0 0 0 5px #eee;
+      padding: 5px 10px;
+      border-radius: 3px;
+      margin: 30px 0;
+      font-size: 13px;
+    }
+    code {
+      background: #eee;
+      border-radius: 5px;
+      color: #555;
+      padding: 2px 5px;
+    }
+    .scroll-element {
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .scroll-element + .scroll-element {
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    h1 {
+      color: #444;
+      margin: 0;
+      font-size: 32px;
+      font-weight: 400;
+    }
+    h2 {
+      color: #444;
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      margin-bottom: 15px;
+    }
+    p {
+      color: #444;
+      font-size: 14px;
+    }
+    p:first-child {
+      margin-top: 0;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: #3B64DD;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: .3s;
+    }
+    a:hover {
+      border-bottom-color: currentColor;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://npmcdn.com/react@15.0.2/dist/react.min.js"></script>
+  <script src="https://npmcdn.com/react-dom@15.0.2/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="index.build.js"></script>
+  <script type="text/babel">
+  const jsxMap = window.jsxMap.default;
+
+  ReactDOM.render(
+    <div className="app">
+      <h1>jsxMap demo</h1>
+      <h2>.map() for JSX</h2>
+      <a href="https://github.com/vahnag/jsx-map">Github</a>
+
+      <p>This library allows modifying the text content of the JSX tree, without needing to know the structure, as if it was just a text.</p>
+      <p>In the text below every <code>a</code> in paragrapths will be replaced with <code>á</code>, except for the ones in <code>&lt;strong&gt;</code> elements.</p>
+
+      {jsxMap(
+        <article>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed posuere eros. Fusce blandit ultrices urna, non facilisis mauris consequat non. <strong>Vestibulum eu nunc ipsum</strong>. Cras ultricies metus eget elit ultricies tincidunt ut nec quam. Nulla auctor sodales dui quis pharetra. Maecenas commodo ex eros, eu mattis lacus elementum non. Aliquam at nibh quis mi cursus tempus eu et augue. Aenean mattis, urna sodales lobortis dictum, turpis tellus varius eros, id pulvinar diam augue vel <strong>nibh. Cras consectetur nec orci nec lobortis</strong>. Morbi et rutrum lectus. Aliquam vitae porttitor turpis, sit amet egestas nisl. Integer at venenatis justo, ut congue orci. In suscipit at eros eu malesuada. Nullam sagittis tempus placerat.
+          </p>
+          <p>
+          Donec maximus justo tortor, non lobortis augue eleifend at. Nulla sed tortor ac augue rhoncus luctus a nec erat. Nam sed neque dui. Praesent dapibus, metus quis tempus ultricies, est libero condimentum sem, ut facilisis lorem est id massa. Ut id eleifend nisl. Cras gravida erat sit amet ligula tristique faucibus a non <strong>augue</strong>. Duis pretium scelerisque felis, at lacinia mi. Mauris sapien justo, aliquam non nulla sed, consectetur vehicula velit. In hac habitasse platea dictumst. Praesent bibendum risus vel accumsan scelerisque. Nulla sodales lacinia lobortis. <strong>Vestibulum ultricies massa non</strong> mollis rutrum. Donec sollicitudin, felis eu porta maximus, nibh nisi facilisis ex, sit amet pulvinar elit tortor a neque. Mauris viverra feugiat quam, ut rutrum eros imperdiet vel. Curabitur et interdum purus. Nulla mattis leo eget augue aliquam varius.
+          </p>
+          <p className="ignore">
+          Sed at tristique neque. Nullam eu elit gravida, ornare nunc ac, interdum tortor. Mauris lectus dui, egestas nec sollicitudin quis, tristique id nibh. Praesent efficitur neque felis, in pulvinar <strong>urna maximus quis</strong>. Pellentesque ullamcorper sollicitudin libero, id luctus massa. Cras vitae efficitur urna, sit amet molestie eros. Vivamus ut feugiat tellus. Cras quis ante nec quam dapibus venenatis.
+          </p>
+          <p>
+          Pellentesque quam sem, ultrices vel placerat vel, euismod ac dui. In lobortis leo justo, sed placerat dui posuere id. Morbi ac enim rutrum, tempus ex sed, porttitor lacus. Maecenas sodales sit <strong>amet sem a finibus</strong>. Phasellus vitae nulla in felis ornare dictum nec vitae urna. Mauris tincidunt dignissim finibus. Proin ipsum elit, lobortis vitae ex et, vehicula rutrum lacus. In quis lobortis urna, in ultrices sapien.
+          </p>
+          <p>
+          <strong>
+          Pellentesque id libero nec massa porta volutpat. Quisque pretium rhoncus lectus a lobortis. In accumsan elit dolor, non lacinia mi lacinia et. Sed massa ante, eleifend a augue vel, sollicitudin tempus felis. Pellentesque est ligula, lacinia hendrerit semper ut, auctor non lectus. Praesent tempor turpis id quam tincidunt gravida. Nulla arcu purus, ullamcorper eu risus eu, sagittis facilisis augue. Suspendisse potenti. Aenean ac fringilla velit, vel tristique eros. Nam quis metus sed leo tempor vulputate. Etiam egestas egestas nisl quis facilisis. Mauris euismod blandit sapien nec euismod. Proin at tortor sit amet dolor aliquam iaculis sit amet iaculis lacus.
+          </strong>
+          </p>
+        </article>
+        , text => text.replace(/a/g, 'á')
+        , el => el.type !== 'strong'
+      )}
+    </div>
+    , document.getElementById('app')
+  )
+  </script>
+</body>
+</html>
