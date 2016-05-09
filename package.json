@@ -2,7 +2,7 @@
   "name": "jsx-map",
   "version": "0.0.1",
   "description": ".map() for JSX",
-  "main": "script.js",
+  "main": "index.build.js",
   "scripts": {
     "test": "ava index.test.js",
     "lint": "eslint index.js index.test.js",
