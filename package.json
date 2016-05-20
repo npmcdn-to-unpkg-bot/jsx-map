@@ -67,6 +67,5 @@
     "moduleId": "jsxMap"
   },
   "dependencies": {
-    "eslint": "^2.9.0"
   }
 }
