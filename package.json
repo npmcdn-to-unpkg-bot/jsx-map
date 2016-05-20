@@ -1,6 +1,6 @@
 {
   "name": "jsx-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": ".map() for JSX",
   "main": "index.build.js",
   "scripts": {
@@ -66,6 +66,5 @@
     "moduleIds": true,
     "moduleId": "jsxMap"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
